@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using training.Constants;
 
 namespace training.Model
 {
@@ -18,6 +17,7 @@ namespace training.Model
         }
 
         public virtual DbSet<Student> Students { get; set; } = null!;
+        public virtual DbSet<User> Users { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -46,6 +46,22 @@ namespace training.Model
                 entity.Property(e => e.Name)
                     .HasMaxLength(100)
                     .HasColumnName("name");
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.HasKey(e => e.Username)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("User");
+
+                entity.Property(e => e.Username)
+                    .HasMaxLength(100)
+                    .HasColumnName("username");
+
+                entity.Property(e => e.Password)
+                    .HasMaxLength(45)
+                    .HasColumnName("password");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using training.Model;
 
 namespace training.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[Authorize]
 public class Studentcontroller : ControllerBase
 {
 
@@ -63,7 +65,7 @@ public class Studentcontroller : ControllerBase
     [HttpPost("update")]
     public async Task<ActionResult> update(Student student)
     {
-        _logger.LogWarning("Entering Get Student");
+        _logger.LogWarning("Entering Update Student");
         try
         {
             _studentDbContext.Students.Update(student);
@@ -76,5 +78,10 @@ public class Studentcontroller : ControllerBase
        
         return Ok(student);
     }
+
+
+
+
+
 }
 

@@ -12,7 +12,7 @@
     "training": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "student",
       "applicationUrl": "https://localhost:7111;http://localhost:5179",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
@@ -21,7 +21,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "student",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
