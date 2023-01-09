@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using training.Model;
-using training.Models;
 
 namespace training.Controllers;
 
@@ -8,7 +7,6 @@ namespace training.Controllers;
 [Route("[controller]")]
 public class Studentcontroller : ControllerBase
 {
-    //Student student = new Student();
 
     private readonly studentDbContext _studentDbContext;
 

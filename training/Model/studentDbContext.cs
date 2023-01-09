@@ -10,7 +10,6 @@ namespace training.Model
     {
         public studentDbContext()
         {
-            Common.HOST;
         }
 
         public studentDbContext(DbContextOptions<studentDbContext> options)
