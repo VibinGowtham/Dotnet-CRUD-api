@@ -10,12 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Biodata API", Version = "v1"
-
-
-    }
-
-    );
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Biodata API", Version = "v1"});
 
     c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
     {
@@ -42,8 +37,6 @@ builder.Services.AddAuthentication(Microsoft.AspNetCore.Authentication.JwtBearer
           IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(Encoding.UTF8.GetBytes("my favourite token is here thank you")),
           ValidateIssuer=false,
           ValidateAudience=false
-
-
         };
     });
 

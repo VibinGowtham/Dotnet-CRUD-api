@@ -44,8 +44,6 @@ namespace training.Controllers
         public async Task<ActionResult> login(User request)
         {
 
-                _logger.LogWarning(request.Username);
-                _logger.LogWarning(request.Password);
                 var user = await _studentDbContext.Users.FindAsync(request.Username);
 
                 if (user != null && user?.Password == request.Password)
@@ -87,8 +85,5 @@ namespace training.Controllers
         }
 
     }
-
-
-
 }
 
