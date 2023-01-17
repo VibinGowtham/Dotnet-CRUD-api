@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-
+using training.Services;
 namespace training.Model
 {
     public partial class studentDbContext : DbContext
@@ -22,11 +22,11 @@ namespace training.Model
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySql("server=sp-dot-net.cdgkfoacvf6u.us-east-1.rds.amazonaws.com;user=admin;password=DotNet123;database=studentCRUD",Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.31-mysql"));
-            }
+//            if (!optionsBuilder.IsConfigured)
+//            {
+////#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+//                optionsBuilder.UseMySql("",Microsoft.EntityFrameworkCore.ServerVersion.AutoDetect(""));
+//            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

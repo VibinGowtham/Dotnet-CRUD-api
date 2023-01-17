@@ -18,10 +18,18 @@
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
     <None Remove="System.IdentityModel.Tokens.Jwt" />
     <None Remove="Swashbuckle.AspNetCore.Filters" />
+    <None Remove="Extension Methods\" />
+    <None Remove="Microsoft.Extensions.Azure" />
+    <None Remove="Azure.Security.KeyVault.Secrets" />
+    <None Remove="Microsoft.Azure.KeyVault" />
+    <None Remove="Microsoft.IdentityModel.Clients.ActiveDirectory" />
+    <None Remove="Azure.Identity" />
+    <None Remove="Azure.Extensions.AspNetCore.Configuration.Secrets" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Constants\" />
     <Folder Include="Services\" />
+    <Folder Include="Extension Methods\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
@@ -34,5 +42,11 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.12" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.25.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="6.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Azure" Version="1.6.0" />
+    <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.4.0" />
+    <PackageReference Include="Microsoft.Azure.KeyVault" Version="3.0.5" />
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="5.3.0" />
+    <PackageReference Include="Azure.Identity" Version="1.8.1" />
+    <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.2.2" />
   </ItemGroup>
 </Project>

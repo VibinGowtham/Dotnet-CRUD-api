@@ -1,12 +1,26 @@
 ﻿using System.Text;
+using Azure.Extensions.AspNetCore.Configuration.Secrets;
+using Azure.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using training.Model;
+using training.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var defaultCredentials = new DefaultAzureCredential();
+var keyVaultEndpoint = builder.Configuration["AzureKeyVaultEndpoint"];
+
+//builder.AddAzureKeyVault(new Uri(keyVaultEndpoint));
+builder.Configuration.AddAzureKeyVault(new Uri(keyVaultEndpoint), defaultCredentials,
+    new AzureKeyVaultConfigurationOptions
+    {
+        // Manager = new PrefixKeyVaultSecretManager(secretPrefix),
+        ReloadInterval = TimeSpan.FromMinutes(5)
+    });
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -26,7 +40,14 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddControllers();
 
-builder.Services.AddScoped<studentDbContext>();
+//builder.Services.AddSingleton<SecretManagerService>();
+
+builder.Services.AddDbContext<studentDbContext>(options =>
+{
+    var serverVersion = new MySqlServerVersion(new Version(8, 0, 28));
+    options.UseMySql(builder.Configuration.GetConnectionString("DotNetTrainingVibin"), serverVersion);
+});
+
 
 builder.Services.AddAuthentication(Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
     options =>
@@ -39,8 +60,8 @@ builder.Services.AddAuthentication(Microsoft.AspNetCore.Authentication.JwtBearer
           ValidateAudience=false
         };
     });
-
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 

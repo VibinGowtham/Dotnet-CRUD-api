@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using training.Model;
+using training.ExtensionMethods;
 
 namespace training.Controllers
 {
@@ -35,6 +36,12 @@ namespace training.Controllers
         {
 
             _logger.LogWarning("Entering Add User");
+            if(!(user.Username.IsNotNull() && user.Password.IsNotNull()))
+            {
+                return BadRequest("Username/Password cannot be empty");
+            }
+            
+            //StringExtensions.
             _studentDbContext.Users.Add(user);
             await _studentDbContext.SaveChangesAsync();
             return Ok(user);
