@@ -1,7 +1,8 @@
-﻿<Properties StartupConfiguration="{BCA4B549-D349-4432-AD6A-E42DC8FB0C13}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+﻿<Properties StartupConfiguration="{BCA4B549-D349-4432-AD6A-E42DC8FB0C13}|Default" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.ItemProperties.training PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.sample FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="training/Services/SecretManagerService.cs">
     <Files>
       <File FileName="training/Extension Methods/StringExtensions.cs" Line="13" Column="1" />
@@ -34,9 +35,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.sample FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.training PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
