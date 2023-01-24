@@ -1,0 +1,27 @@
+
+@using MVCapp.Models;
+@{
+    ViewData["Title"] = "index";
+}
+
+<h1>List of Students</h1>
+
+@model List<Student>
+
+<table id="studentsTable">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Mark</th>
+    </tr>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Age</td>
+                <td>@student.Mark</td>
+            </tr>
+        }
+</table>
