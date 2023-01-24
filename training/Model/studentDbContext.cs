@@ -22,11 +22,11 @@ namespace training.Model
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-//            if (!optionsBuilder.IsConfigured)
-//            {
-////#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-//                optionsBuilder.UseMySql("",Microsoft.EntityFrameworkCore.ServerVersion.AutoDetect(""));
-//            }
+            //if (!optionsBuilder.IsConfigured)
+            //{
+            //    //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+            //    optionsBuilder.UseMySql("Server=sp-dot-net.cdgkfoacvf6u.us-east-1.rds.amazonaws.com;User=admin;Password=DotNet123;Database=studentCRUD;", Microsoft.EntityFrameworkCore.ServerVersion.AutoDetect(""));
+            //}
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -1,40 +1,37 @@
-﻿<Properties StartupConfiguration="{BCA4B549-D349-4432-AD6A-E42DC8FB0C13}|Default" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.ItemProperties.training PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.ItemProperties.sample FirstBuild="True" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{10652A95-52DA-4120-9D83-BB7CE1AF65FC}|Default">
+  <MonoDevelop.Ide.ItemProperties.MVCapp FirstBuild="True" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="training/Services/SecretManagerService.cs">
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.sample FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.ItemProperties.training PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="training/Program.cs">
     <Files>
-      <File FileName="training/Extension Methods/StringExtensions.cs" Line="13" Column="1" />
-      <File FileName="training/Model/User.cs" Line="12" Column="1" />
-      <File FileName="training/Controllers/User.cs" Line="52" Column="10" />
-      <File FileName="training/Model/studentDbContext.cs" Line="22" Column="70" />
-      <File FileName="training/appsettings.json" Line="13" Column="1" />
-      <File FileName="training/appsettings.Development.json" Line="1" Column="1" />
-      <File FileName="training/Services/StudentService.cs" Line="15" Column="1" />
-      <File FileName="training/Services/SecretManagerService.cs" Line="14" Column="27" />
-      <File FileName="training/Program.cs" Line="33" Column="1" />
+      <File FileName="training/Extension Methods/StringExtensions.cs" />
+      <File FileName="training/Model/User.cs" />
+      <File FileName="training/Controllers/User.cs" />
+      <File FileName="training/Model/studentDbContext.cs" Line="14" Column="1" />
+      <File FileName="training/appsettings.json" />
+      <File FileName="training/appsettings.Development.json" />
+      <File FileName="training/Services/StudentService.cs" />
+      <File FileName="training/Program.cs" Line="45" Column="53" />
+      <File FileName="training/Dockerfile" />
+      <File FileName="training/Constants/Common.cs" />
+      <File FileName="training/Controllers/Student.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="training" expanded="True">
             <Node name="training" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
-              <Node name="Controllers" expanded="True" />
               <Node name="Model" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="SecretManagerService.cs" selected="True" />
-              </Node>
-              <Node name="appsettings.json" expanded="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

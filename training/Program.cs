@@ -15,12 +15,12 @@ var defaultCredentials = new DefaultAzureCredential();
 var keyVaultEndpoint = builder.Configuration["AzureKeyVaultEndpoint"];
 
 //builder.AddAzureKeyVault(new Uri(keyVaultEndpoint));
-builder.Configuration.AddAzureKeyVault(new Uri(keyVaultEndpoint), defaultCredentials,
-    new AzureKeyVaultConfigurationOptions
-    {
-        // Manager = new PrefixKeyVaultSecretManager(secretPrefix),
-        ReloadInterval = TimeSpan.FromMinutes(5)
-    });
+//builder.Configuration.AddAzureKeyVault(new Uri(keyVaultEndpoint), defaultCredentials,
+//    new AzureKeyVaultConfigurationOptions
+//    {
+//        // Manager = new PrefixKeyVaultSecretManager(secretPrefix),
+//        ReloadInterval = TimeSpan.FromMinutes(5)
+//    });
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -42,10 +42,12 @@ builder.Services.AddControllers();
 
 //builder.Services.AddSingleton<SecretManagerService>();
 
+//builder.Services.AddDbContext<studentDbContext>();
+
 builder.Services.AddDbContext<studentDbContext>(options =>
 {
     var serverVersion = new MySqlServerVersion(new Version(8, 0, 28));
-    options.UseMySql(builder.Configuration.GetConnectionString("DotNetTrainingVibin"), serverVersion);
+    options.UseMySql("Server=sp-dot-net.c4upicmbdujn.ap-south-1.rds.amazonaws.com;User=admin;Password=DotNet123;Database=studentCRUD;", serverVersion);
 });
 
 

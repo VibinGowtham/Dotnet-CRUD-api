@@ -21,6 +21,7 @@ public class Studentcontroller : ControllerBase
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public ActionResult getStudents()
     {
         _logger.LogWarning("Entering Get Student");

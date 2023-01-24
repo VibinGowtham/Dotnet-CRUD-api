@@ -1,0 +1,36 @@
+services:
+  training:
+    build:
+      context: /Users/vibingowtham/Projects/training
+      dockerfile: training/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: training
+      target: base
+    container_name: training
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+    image: training:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net6.0/training.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - target: 80
+    - target: 443
+    tty: true
+    volumes:
+    - /Users/vibingowtham/Projects/training/training:/app:rw
+    - /Users/vibingowtham/vsdbg/vs2017u5:/remote_debugger:rw
+    - /Users/vibingowtham/.aspnet/https:/root/.aspnet/https:ro
+    - /Users/vibingowtham/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+    - /Users/vibingowtham/.nuget/packages:/root/.nuget/packages:ro
+    - /Users/vibingowtham/Projects/training:/src:rw
+version: '3.4'

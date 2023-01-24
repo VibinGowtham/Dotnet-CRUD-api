@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  training:
+    image: ${DOCKER_REGISTRY-}training
+    build:
+      context: .
+      dockerfile: training/Dockerfile
